@@ -37,6 +37,7 @@ Maquetación moderna enfocada en el rendimiento y la experiencia de usuario:
     - Bloques Gutenberg a Medida: Renderizado personalizado para galerías interactivas y formularios de búsqueda.
 
 ## Estructura del Proyecto
+```text
 avante-project/
 ├── assets/                     # Recursos estáticos (CSS modular, JS, Iconos)
 ├── inc/                        # Lógica modular
