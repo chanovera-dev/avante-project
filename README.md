@@ -71,4 +71,4 @@ avante-project/
 
 ## Créditos y Licencia
 - **Autor:** ChanoDEV (https://chano.dev)
-- **Licencia:** GNU General Public License v2 o posterior.
+- **Licencia:** [GNU General Public License v2](https://choosealicense.com/licenses/gpl-2.0/).
