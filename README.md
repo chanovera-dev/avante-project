@@ -1,14 +1,22 @@
 # Avante Project - Gestión de Propiedades
-Sistema de gestión inmobiliaria basado en WordPress diseñado para la integración dinámica de propiedades, sincronización externa y análisis de datos avanzado.
+
+## Visión General
+**Avante Project** es una solución integral de gestión inmobiliaria desarrollada sobre WordPress, diseñada para cerrar la brecha entre la gestión administrativa y la presencia digital de alto impacto.
+A diferencia de las integraciones estándar, este sistema no solo visualiza datos externos, sino que los **asimila localmente** para ofrecer una experiencia de usuario ultra rápida, un SEO optimizado y un control total sobre la inteligencia de datos a través de un panel de métricas personalizado.
 
 ## Descripción
 Este proyecto permite a una inmobiliaria gestionar su catálogo de propiedades de forma híbrida. El sistema se sincroniza con la API de EasyBroker para obtener las propiedades de manera automatizada, manteniendo la capacidad de almacenarlas, editarlas y expandirlas localmente. Incluye un panel de control avanzado para la visualización de estadísticas y métricas del inventario.
 
-## Motor Inmobiliario (Real Estate Engine)
-El núcleo del proyecto está diseñado específicamente para el mercado de bienes raíces con capacidades de alto rendimiento:
+## Características Principales
 
-- **Integración con EasyBroker API:** Sincronización completa de propiedades, incluyendo metadatos, descripciones enriquecidas y galerías de imágenes.
-- **Gestión Híbrida de Inventario:** Infraestructura para el almacenamiento y edición personalizada de propiedades en la base de datos local (CPT Property).
+### Sincronización Inteligente (EasyBroker API)
+El sistema utiliza un motor de sincronización robusto que conecta la API de **EasyBroker** con un **Custom Post Type (CPT)** local denominado `property`.
+- **Actualización Automatizada**: Sincronización periódica de precios, estados, descripciones y galerías multimedia, etc (todos los datos que entrega la API de EasyBroker).
+- **Persistencia de Datos**: Las propiedades residen en la base de datos local, garantizando disponibilidad inmediata y eliminando la latencia de peticiones externas.
+- **Control Total**: El usuario tiene la capacidad de gestionar las propiedades localmente, lo que le permite realizar cambios en tiempo real y mantener un control total sobre su contenido.
+- **Mapeo de Atributos**: Conversión inteligente de metadatos (recámaras, baños, m², amenidades) para filtros de búsqueda avanzados.
+- **Filtros Avanzados**: Implementación de filtros personalizados para búsqueda de propiedades por ubicación, precio, tipo de propiedad, etc.
+- **SEO Optimizado**: Optimización de metadatos para mejorar el posicionamiento en motores de búsqueda.
 - **Dashboard de Estadísticas:** Panel administrativo integrado en WordPress que ofrece una vista panorámica del inventario:
     - Métricas de estado (publicadas, borradores, privadas).
     - Desglose por tipo de operación (Venta/Renta).
@@ -18,8 +26,25 @@ El núcleo del proyecto está diseñado específicamente para el mercado de bien
     - Ubicación (Estado y Ciudad).
     - Tipo de Operación y Tipo de Propiedad.
     - Rangos de precio y dimensiones (construcción/terreno).
-- **Galería Inteligente:** Gestión unificada que combina imágenes de la API con archivos locales subidos mediante ACF.
+- **Galería Inteligente:** Gestión unificada que combina imágenes de la API con archivos locales subidos mediante ACF/SCF.
 - **Acciones Rápidas (CTA):** Conversión automática de datos de contacto (WhatsApp, Teléfono, Email) en botones de acción directa en las fichas.
+
+### Dashboard de Análisis y Métricas
+El proyecto incluye un panel administrativo exclusivo diseñado para la toma de decisiones basada en datos reales:
+- **Monitor de Rendimiento**: Visualización de las propiedades más visitadas y con mayor tasa de interacción.
+- **Estadísticas de Inventario**: Gráficos comparativos por tipo de operación (Venta/Renta) y zonas geográficas.
+- **Auditoría de Sincronización**: Registro detallado de las últimas actualizaciones exitosas desde la API.
+
+### Optimización y Rendimiento
+- **SEO Local Avanzado**: Al ser contenido local, cada propiedad genera su propia URL amigable, metatags y esquema de datos para buscadores.
+- **Arquitectura Escalable**: Capacidad para manejar catálogos de cientos de propiedades sin degradar la velocidad del sitio.
+- **Interfaz Adaptable**: Diseño totalmente responsive enfocado en la conversión, permitiendo que los clientes contacten al agente desde cualquier dispositivo.
+
+### Stack Tecnológico
+- **Core**: WordPress (Arquitectura de CPT & Custom Taxonomies).
+- **Integración**: EasyBroker REST API.
+- **Frontend**: Desarrollado para alta velocidad de carga y experiencia de usuario (UX) intuitiva.
+- **Data Engine**: Lógica de procesamiento de datos para el Dashboard de métricas.
 
 ## Funcionalidades del Tema (Frontend & UX)
 Maquetación moderna enfocada en el rendimiento y la experiencia de usuario:
@@ -53,19 +78,17 @@ avante-project/
 └── README.md                   # Documentación técnica
 ```
 
+### Requisitos del Sistema
+- Claves de API activas de EasyBroker.
+- Módulo de gestión de campos personalizados (ACF o SCF).
+
 ## Requisitos del Sistema
 - WordPress 6.x o superior.
 - PHP 8.x o superior.
 - API Key de EasyBroker activa.
 
-## Instalación y Configuración
-1. Subir el tema a la carpeta `wp-content/themes/` de tu instalación.
-2. Activar el tema desde el panel de Administración > Apariencia.
-3. Ingresar la API Key de EasyBroker en la sección de ajustes de Propiedades.
-4. Ejecutar la sincronización inicial desde el Dashboard de Propiedades.
-
 ## Desarrollo y Personalización
-- **Lógica:** Toda la funcionalidad crítica reside en `inc/` para mantener `functions.php` organizado.
+- **Lógica:** Toda la funcionalidad crítica reside en `inc/` para mantener `functions.php` organizado. El resto de archivos dentro de `inc/` son modulares y contienen la lógica de la Rest API y del Real Estate Tools.
 - **REST API:** El Dashboard consume datos locales mediante la REST API de WordPress para una representación gráfica fluida sin recargas.
 - **Estilos:** Se utiliza `style.css` para definir tokens de diseño y variables globales.
 
